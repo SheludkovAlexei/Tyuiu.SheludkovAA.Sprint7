@@ -21,9 +21,10 @@ namespace Project.V1
         {
             InitializeComponent();
         }
-        static string path;
+        public string path;
         private void FormMain_Load(object sender, EventArgs e)
         {
+            buttonSave_SAA.Enabled = false;
 
         }
         public static string[,] Array(string path)
@@ -45,9 +46,10 @@ namespace Project.V1
             return mtr;
         }
 
-        private void buttonOpen_SAA_Click(object sender, EventArgs e)
+         public void buttonOpen_SAA_Click(object sender, EventArgs e)
         {
-
+            textBoxSearch_SAA.Text = "";
+            buttonSave_SAA.Enabled = true;
             openFileDialog_SAA.ShowDialog();
             path = openFileDialog_SAA.FileName;
             string[,] res = Array(path);
@@ -55,6 +57,8 @@ namespace Project.V1
             dataGridViewTabl_SAA.Rows.Clear();
             dataGridViewTabl_SAA.ColumnCount = coll;
             dataGridViewTabl_SAA.RowCount = rows;
+            textBoxSearch_SAA.Enabled = true;
+            buttonSearch_SAA.Enabled = true;
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < coll; j++)
@@ -78,40 +82,101 @@ namespace Project.V1
 
         private void buttonSave_SAA_Click(object sender, EventArgs e)
         {
-            saveFileDialog.FileName = ".csv";
-            saveFileDialog.InitialDirectory = @"C:\Users\Desktop";
-            saveFileDialog.ShowDialog();
+            string ID = textBoxSearch_SAA.Text;
+            if (ID == "")
+            {
+                saveFileDialog.FileName = ".csv";
+                saveFileDialog.InitialDirectory = @"C:\Users\Desktop";
+                saveFileDialog.ShowDialog();
 
 
-            string path1 = saveFileDialog.FileName;
-            FileInfo fi = new FileInfo(path1);
-            bool fe = fi.Exists;
-            if (fe)
-            {
-                File.Delete(path1);
-            }
-            string str = "";
-            for (int i = 0; i < rows; i++)
-            {
-                for (int j = 0; j < coll; j++)
+                string path1 = saveFileDialog.FileName;
+                FileInfo fi = new FileInfo(path1);
+                bool fe = fi.Exists;
+                if (fe)
                 {
-                    if (j != coll - 1)
-                    {
-                        str = str + dataGridViewTabl_SAA.Rows[i].Cells[j].Value + ";";
-                    }
-                    else
-                    {
-                        str = str + dataGridViewTabl_SAA.Rows[i].Cells[j].Value;
-                    }
+                    File.Delete(path1);
                 }
-                File.AppendAllText(path1, str + Environment.NewLine);
-                str = "";
+                string str = "";
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < coll; j++)
+                    {
+                        if (j != coll - 1)
+                        {
+                            str = str + dataGridViewTabl_SAA.Rows[i].Cells[j].Value + ";";
+                        }
+                        else
+                        {
+                            str = str + dataGridViewTabl_SAA.Rows[i].Cells[j].Value;
+                        }
+                    }
+                    File.AppendAllText(path1, str + Environment.NewLine);
+                    str = "";
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выйдите из режима поиска \r(нажмите кнопку открыть файл)", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void panelBD_SAA_Paint(object sender, PaintEventArgs e)
+        private void buttonHelp_SAA_Click(object sender, EventArgs e)
         {
+            FormAbout formAbout = new FormAbout();
+            formAbout.Show();
+            
+        }
 
+        private void buttonSearch_SAA_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int ID = Convert.ToInt32(textBoxSearch_SAA.Text);
+                dataGridViewTabl_SAA.Columns.Clear();
+                dataGridViewTabl_SAA.Rows.Clear();
+                string[,] res = Array(path);
+                dataGridViewTabl_SAA.ColumnCount = coll;
+                dataGridViewTabl_SAA.RowCount = ID+1;
+                if (ID < rows)
+                {
+                    for (int i = 0; i < rows; i++)
+                    {
+                        for (int j = 0; j < coll; j++)
+                        {
+                            if (i == ID)
+                            {
+                                if (j == 0)
+                                {
+                                    dataGridViewTabl_SAA.Rows[1].Cells[j].Value = res[i, j];
+                                    dataGridViewTabl_SAA.Columns[j].Width = 25;
+                                }
+                                else
+                                {
+                                    dataGridViewTabl_SAA.Rows[1].Cells[j].Value = res[i, j];
+                                    dataGridViewTabl_SAA.Columns[j].Width = 100;
+                                    dataGridViewTabl_SAA.Rows[i].Height = 25;
+                                }
+                            }
+                            else if (i == 0)
+                            {
+                                dataGridViewTabl_SAA.Rows[i].Cells[j].Value = res[i, j];
+                            }
+
+                        }
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("В базе данных нет такого количества элементов!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Введите верные данные!", "Ошибка!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+
+            }
         }
     }
 }

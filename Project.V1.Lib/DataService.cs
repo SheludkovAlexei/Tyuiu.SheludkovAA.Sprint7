@@ -9,7 +9,7 @@ namespace Project.V1.Lib
 {
     public class DataService
     {
-        public string[,] VivodVSpisok(string path)
+        public string[,] sortPrice(string path)
         {
             string data = File.ReadAllText(path);
             data = data.Replace('\n', '\r');
@@ -25,8 +25,40 @@ namespace Project.V1.Lib
                     mtr[i, j] = strok[j];
                 }
             }
+            int[] ln1 = new int[rows];
+            
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < coll; j++)
+                {
+                    if ((j == 4)&&(i>0))
+                    {
+                        ln1[i] = Convert.ToInt32(mtr[i, j]);
+                    }
+                }
+            }
+            string[] lines2 = new string[coll];
+            Array.Sort(ln1);
+            string[,] mtr1 = new string[rows, coll];
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < coll; j++)
+                {
+                    if ((j == 4)&&(i>0))
+                    {
+                        mtr1[i, j] = Convert.ToString(ln1[i]);
+                    }
+                    if (lines[i].Split(';')[4] == mtr1[i, j])
+                    {
+                        lines2 = lines[i].Split(';');
 
-            return mtr;
+                    }
+                }
+            }
+
+
+
+            return mtr1;
         }
     }
 }

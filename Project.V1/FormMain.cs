@@ -46,7 +46,7 @@ namespace Project.V1
             return mtr;
         }
 
-         public void buttonOpen_SAA_Click(object sender, EventArgs e)
+        public void buttonOpen_SAA_Click(object sender, EventArgs e)
         {
             textBoxSearch_SAA.Text = "";
             buttonSave_SAA.Enabled = true;
@@ -85,7 +85,7 @@ namespace Project.V1
             string ID = textBoxSearch_SAA.Text;
             if (ID == "")
             {
-                saveFileDialog.FileName = ".csv";
+                saveFileDialog.FileName = "*.csv";
                 saveFileDialog.InitialDirectory = @"C:\Users\Desktop";
                 saveFileDialog.ShowDialog();
 
@@ -125,7 +125,7 @@ namespace Project.V1
         {
             FormAbout formAbout = new FormAbout();
             formAbout.Show();
-            
+
         }
 
         private void buttonSearch_SAA_Click(object sender, EventArgs e)
@@ -137,7 +137,7 @@ namespace Project.V1
                 dataGridViewTabl_SAA.Rows.Clear();
                 string[,] res = Array(path);
                 dataGridViewTabl_SAA.ColumnCount = coll;
-                dataGridViewTabl_SAA.RowCount = ID+1;
+                dataGridViewTabl_SAA.RowCount = ID + 1;
                 if (ID < rows)
                 {
                     for (int i = 0; i < rows; i++)
@@ -169,13 +169,32 @@ namespace Project.V1
                 }
                 else
                 {
+                    dataGridViewTabl_SAA.Columns.Clear();
+                    dataGridViewTabl_SAA.Rows.Clear();
                     MessageBox.Show("В базе данных нет такого количества элементов!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
             }
             catch
             {
-                MessageBox.Show("Введите верные данные!", "Ошибка!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Введите верные данные!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ListSortDirection list = new ListSortDirection();
+            list = ListSortDirection.Ascending;
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < coll; j++)
+                {
+                    if (i > 0)
+                    {
+                        dataGridViewTabl_SAA.Sort(dataGridViewTabl_SAA.Columns[4], list);
+                    }
+                }
             }
         }
     }

@@ -46,6 +46,7 @@ namespace Project.V1
             this.buttonSearch_SAA = new System.Windows.Forms.Button();
             this.labelSearch_SAA = new System.Windows.Forms.Label();
             this.textBoxSearch_SAA = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTabl_SAA)).BeginInit();
             this.panelBD_SAA.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -179,6 +180,7 @@ namespace Project.V1
             // 
             this.groupBoxSearch_SAA.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxSearch_SAA.Controls.Add(this.button1);
             this.groupBoxSearch_SAA.Controls.Add(this.buttonSearch_SAA);
             this.groupBoxSearch_SAA.Controls.Add(this.labelSearch_SAA);
             this.groupBoxSearch_SAA.Controls.Add(this.textBoxSearch_SAA);
@@ -223,6 +225,16 @@ namespace Project.V1
             this.textBoxSearch_SAA.Size = new System.Drawing.Size(140, 20);
             this.textBoxSearch_SAA.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(431, 35);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(121, 36);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -264,6 +276,7 @@ namespace Project.V1
         private System.Windows.Forms.Button buttonSearch_SAA;
         private System.Windows.Forms.GroupBox groupBoxSearch_SAA;
         private System.Windows.Forms.GroupBox groupBoxMenu_SAA;
+        private System.Windows.Forms.Button button1;
     }
 }
 

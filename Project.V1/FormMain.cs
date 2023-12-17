@@ -53,6 +53,11 @@ namespace Project.V1
             openFileDialog_SAA.ShowDialog();
             path = openFileDialog_SAA.FileName;
             string[,] res = Array(path);
+            textBoxZarabotok_SAA.Text = Convert.ToString(ds.Pribil(path));
+            textBoxYslyg_SAA.Text = Convert.ToString(ds.ID(path));
+            textBoxMax_SAA.Text = Convert.ToString(ds.Max(path));
+            textBoxMin_SAA.Text = Convert.ToString(ds.Min(path));
+            textBoxSred_SAA.Text = Convert.ToString(ds.Pribil(path) / ds.ID(path));
             dataGridViewTabl_SAA.Columns.Clear();
             dataGridViewTabl_SAA.Rows.Clear();
             dataGridViewTabl_SAA.ColumnCount = coll;
@@ -182,20 +187,5 @@ namespace Project.V1
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ListSortDirection list = new ListSortDirection();
-            list = ListSortDirection.Ascending;
-            for (int i = 0; i < rows; i++)
-            {
-                for (int j = 0; j < coll; j++)
-                {
-                    if (i > 0)
-                    {
-                        dataGridViewTabl_SAA.Sort(dataGridViewTabl_SAA.Columns[4], list);
-                    }
-                }
-            }
-        }
     }
 }

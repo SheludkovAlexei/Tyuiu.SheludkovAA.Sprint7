@@ -9,7 +9,7 @@ namespace Project.V1.Lib
 {
     public class DataService
     {
-        public int Pribil(string path)
+        public int Pribil(string path,int cost)
         {
             string data = File.ReadAllText(path);
             data = data.Replace('\n', '\r');
@@ -31,7 +31,7 @@ namespace Project.V1.Lib
             {
                 for (int j = 0; j < coll; j++)
                 {
-                    if ((j == 4)&&(i>0))
+                    if ((j == cost)&&(i>0))
                     {
                         ln1[i] = Convert.ToInt32(mtr[i, j]);
                     }
@@ -84,7 +84,7 @@ namespace Project.V1.Lib
             return max;
 
         }
-        public int Min(string path)
+        public int Min(string path,int cost)
         {
             string data = File.ReadAllText(path);
             data = data.Replace('\n', '\r');
@@ -106,7 +106,7 @@ namespace Project.V1.Lib
             {
                 for (int j = 0; j < coll; j++)
                 {
-                    if ((j == 4) && (i > 0))
+                    if ((j == cost) && (i > 0))
                     {
                         ln1[i] = Convert.ToInt32(mtr[i, j]);
                     }
@@ -124,7 +124,7 @@ namespace Project.V1.Lib
             }
             return min;
         }
-        public int Max(string path)
+        public int Max(string path,int cost)
         {
             string data = File.ReadAllText(path);
             data = data.Replace('\n', '\r');
@@ -146,7 +146,7 @@ namespace Project.V1.Lib
             {
                 for (int j = 0; j < coll; j++)
                 {
-                    if ((j == 4) && (i > 0))
+                    if ((j == cost) && (i > 0))
                     {
                         ln1[i] = Convert.ToInt32(mtr[i, j]);
                     }

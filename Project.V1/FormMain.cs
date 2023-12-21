@@ -27,13 +27,51 @@ namespace Project.V1
             buttonSave_SAA.Enabled = false;
 
         }
+        
+        static int cost;
+        static int date;
         public static string[,] Array(string path)
         {
+            
             string data = File.ReadAllText(path);
             data = data.Replace('\n', '\r');
             string[] lines = data.Split(new char[] { '\r' }, StringSplitOptions.RemoveEmptyEntries);
             rows = lines.Length;
             coll = lines[0].Split(';').Length;
+            for (int i = 0; i < rows; i++)
+            {
+                string[] strok = lines[i].Split(';');
+                for (int j = 0; j < coll; j++)
+                {
+                    try
+                    {
+                        int lin = Convert.ToInt32(strok[j]);
+                        cost = j;
+                    }
+                    catch
+                    {
+                        continue;
+                    }
+
+                }
+            }
+            for (int i = 0; i < rows; i++)
+            {
+                string[] strok = lines[i].Split(';');
+                for (int j = 0; j < coll; j++)
+                {
+                    try
+                    {
+                        DateTime lin1 = Convert.ToDateTime(strok[j]);
+                        date = j;
+                    }
+                    catch
+                    {
+                        continue;
+                    }
+
+                }
+            }
             string[,] mtr = new string[rows, coll];
             for (int i = 0; i < rows; i++)
             {
@@ -53,11 +91,11 @@ namespace Project.V1
             openFileDialog_SAA.ShowDialog();
             path = openFileDialog_SAA.FileName;
             string[,] res = Array(path);
-            textBoxZarabotok_SAA.Text = Convert.ToString(ds.Pribil(path));
+            textBoxZarabotok_SAA.Text = Convert.ToString(ds.Pribil(path,cost));
             textBoxYslyg_SAA.Text = Convert.ToString(ds.ID(path));
-            textBoxMax_SAA.Text = Convert.ToString(ds.Max(path));
-            textBoxMin_SAA.Text = Convert.ToString(ds.Min(path));
-            textBoxSred_SAA.Text = Convert.ToString(ds.Pribil(path) / ds.ID(path));
+            textBoxMax_SAA.Text = Convert.ToString(ds.Max(path,cost));
+            textBoxMin_SAA.Text = Convert.ToString(ds.Min(path,cost));
+            textBoxSred_SAA.Text = Convert.ToString(ds.Pribil(path,cost) / ds.ID(path));
             dataGridViewTabl_SAA.Columns.Clear();
             dataGridViewTabl_SAA.Rows.Clear();
             dataGridViewTabl_SAA.ColumnCount = coll;

@@ -102,6 +102,8 @@ namespace Project.V1
             dataGridViewTabl_SAA.RowCount = rows;
             textBoxSearch_SAA.Enabled = true;
             buttonSearch_SAA.Enabled = true;
+            buttonExit_SAA.Enabled = true;
+            buttonFunk_SAA.Enabled = true;
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < coll; j++)
@@ -160,7 +162,7 @@ namespace Project.V1
             }
             else
             {
-                MessageBox.Show("Выйдите из режима поиска \r(нажмите кнопку открыть файл)", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Выйдите из режима поиска!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -223,6 +225,42 @@ namespace Project.V1
                 MessageBox.Show("Введите верные данные!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+        }
+
+        private void buttonExit_SAA_Click(object sender, EventArgs e)
+        {
+            string[,] res = Array(path);
+            dataGridViewTabl_SAA.Columns.Clear();
+            dataGridViewTabl_SAA.Rows.Clear();
+            dataGridViewTabl_SAA.ColumnCount = coll;
+            dataGridViewTabl_SAA.RowCount = rows;
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < coll; j++)
+                {
+                    if (j == 0)
+                    {
+                        dataGridViewTabl_SAA.Rows[i].Cells[j].Value = res[i, j];
+                        dataGridViewTabl_SAA.Columns[j].Width = 25;
+                    }
+                    else
+                    {
+                        dataGridViewTabl_SAA.Rows[i].Cells[j].Value = res[i, j];
+                        dataGridViewTabl_SAA.Columns[j].Width = 100;
+                        dataGridViewTabl_SAA.Rows[i].Height = 25;
+                    }
+
+
+                }
+            }
+            textBoxSearch_SAA.Text = "";
+        }
+
+        private void buttonFunk_SAA_Click(object sender, EventArgs e)
+        {
+            FormGraphix form = new FormGraphix();
+            form.path1 = path;
+            form.Show();
         }
 
     }

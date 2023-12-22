@@ -39,11 +39,19 @@ namespace Project.V1
             this.toolTipHelp_SAA = new System.Windows.Forms.ToolTip(this.components);
             this.buttonHelp_SAA = new System.Windows.Forms.Button();
             this.buttonSearch_SAA = new System.Windows.Forms.Button();
+            this.buttonExit_SAA = new System.Windows.Forms.Button();
             this.panelBD_SAA = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBoxMenu_SAA = new System.Windows.Forms.GroupBox();
             this.panelSearch_SAA = new System.Windows.Forms.Panel();
             this.groupBoxStat_SAA = new System.Windows.Forms.GroupBox();
+            this.buttonFunk_SAA = new System.Windows.Forms.Button();
+            this.labelSred_SAA = new System.Windows.Forms.Label();
+            this.textBoxSred_SAA = new System.Windows.Forms.TextBox();
+            this.labelMin_SAA = new System.Windows.Forms.Label();
+            this.labelMax_SAA = new System.Windows.Forms.Label();
+            this.textBoxMin_SAA = new System.Windows.Forms.TextBox();
+            this.textBoxMax_SAA = new System.Windows.Forms.TextBox();
             this.labelYslygi_SAA = new System.Windows.Forms.Label();
             this.textBoxYslyg_SAA = new System.Windows.Forms.TextBox();
             this.labelZarabotok_SAA = new System.Windows.Forms.Label();
@@ -51,12 +59,6 @@ namespace Project.V1
             this.groupBoxSearch_SAA = new System.Windows.Forms.GroupBox();
             this.labelSearch_SAA = new System.Windows.Forms.Label();
             this.textBoxSearch_SAA = new System.Windows.Forms.TextBox();
-            this.textBoxMax_SAA = new System.Windows.Forms.TextBox();
-            this.textBoxMin_SAA = new System.Windows.Forms.TextBox();
-            this.labelMax_SAA = new System.Windows.Forms.Label();
-            this.labelMin_SAA = new System.Windows.Forms.Label();
-            this.textBoxSred_SAA = new System.Windows.Forms.TextBox();
-            this.labelSred_SAA = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTabl_SAA)).BeginInit();
             this.panelBD_SAA.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -75,7 +77,7 @@ namespace Project.V1
             this.buttonOpen_SAA.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonOpen_SAA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonOpen_SAA.Image = ((System.Drawing.Image)(resources.GetObject("buttonOpen_SAA.Image")));
-            this.buttonOpen_SAA.Location = new System.Drawing.Point(414, 19);
+            this.buttonOpen_SAA.Location = new System.Drawing.Point(553, 19);
             this.buttonOpen_SAA.Name = "buttonOpen_SAA";
             this.buttonOpen_SAA.Size = new System.Drawing.Size(139, 59);
             this.buttonOpen_SAA.TabIndex = 1;
@@ -100,7 +102,7 @@ namespace Project.V1
             this.dataGridViewTabl_SAA.Name = "dataGridViewTabl_SAA";
             this.dataGridViewTabl_SAA.RowHeadersVisible = false;
             this.dataGridViewTabl_SAA.RowHeadersWidth = 30;
-            this.dataGridViewTabl_SAA.Size = new System.Drawing.Size(768, 319);
+            this.dataGridViewTabl_SAA.Size = new System.Drawing.Size(907, 319);
             this.dataGridViewTabl_SAA.TabIndex = 2;
             // 
             // buttonSave_SAA
@@ -112,7 +114,7 @@ namespace Project.V1
             this.buttonSave_SAA.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSave_SAA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSave_SAA.Image = ((System.Drawing.Image)(resources.GetObject("buttonSave_SAA.Image")));
-            this.buttonSave_SAA.Location = new System.Drawing.Point(569, 19);
+            this.buttonSave_SAA.Location = new System.Drawing.Point(708, 19);
             this.buttonSave_SAA.Name = "buttonSave_SAA";
             this.buttonSave_SAA.Size = new System.Drawing.Size(193, 59);
             this.buttonSave_SAA.TabIndex = 3;
@@ -150,16 +152,29 @@ namespace Project.V1
             this.buttonSearch_SAA.Enabled = false;
             this.buttonSearch_SAA.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSearch_SAA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSearch_SAA.Image = ((System.Drawing.Image)(resources.GetObject("buttonSearch_SAA.Image")));
             this.buttonSearch_SAA.Location = new System.Drawing.Point(167, 19);
             this.buttonSearch_SAA.Name = "buttonSearch_SAA";
-            this.buttonSearch_SAA.Size = new System.Drawing.Size(162, 66);
+            this.buttonSearch_SAA.Size = new System.Drawing.Size(162, 43);
             this.buttonSearch_SAA.TabIndex = 1;
             this.buttonSearch_SAA.Text = "Поиск";
-            this.buttonSearch_SAA.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolTipHelp_SAA.SetToolTip(this.buttonSearch_SAA, "Нажмите, чтобы найти нужный заказ.");
             this.buttonSearch_SAA.UseVisualStyleBackColor = false;
             this.buttonSearch_SAA.Click += new System.EventHandler(this.buttonSearch_SAA_Click);
+            // 
+            // buttonExit_SAA
+            // 
+            this.buttonExit_SAA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.buttonExit_SAA.Enabled = false;
+            this.buttonExit_SAA.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonExit_SAA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonExit_SAA.Location = new System.Drawing.Point(189, 72);
+            this.buttonExit_SAA.Name = "buttonExit_SAA";
+            this.buttonExit_SAA.Size = new System.Drawing.Size(119, 26);
+            this.buttonExit_SAA.TabIndex = 3;
+            this.buttonExit_SAA.Text = "Выход";
+            this.toolTipHelp_SAA.SetToolTip(this.buttonExit_SAA, "Нажмите, чтобы выйти из режима поиска\r\n");
+            this.buttonExit_SAA.UseVisualStyleBackColor = false;
+            this.buttonExit_SAA.Click += new System.EventHandler(this.buttonExit_SAA_Click);
             // 
             // panelBD_SAA
             // 
@@ -169,7 +184,7 @@ namespace Project.V1
             this.panelBD_SAA.Controls.Add(this.dataGridViewTabl_SAA);
             this.panelBD_SAA.Location = new System.Drawing.Point(0, 6);
             this.panelBD_SAA.Name = "panelBD_SAA";
-            this.panelBD_SAA.Size = new System.Drawing.Size(784, 328);
+            this.panelBD_SAA.Size = new System.Drawing.Size(923, 328);
             this.panelBD_SAA.TabIndex = 4;
             // 
             // panel1
@@ -178,7 +193,7 @@ namespace Project.V1
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 469);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(784, 92);
+            this.panel1.Size = new System.Drawing.Size(923, 92);
             this.panel1.TabIndex = 5;
             // 
             // groupBoxMenu_SAA
@@ -190,7 +205,7 @@ namespace Project.V1
             this.groupBoxMenu_SAA.Controls.Add(this.buttonOpen_SAA);
             this.groupBoxMenu_SAA.Location = new System.Drawing.Point(8, 5);
             this.groupBoxMenu_SAA.Name = "groupBoxMenu_SAA";
-            this.groupBoxMenu_SAA.Size = new System.Drawing.Size(768, 84);
+            this.groupBoxMenu_SAA.Size = new System.Drawing.Size(907, 84);
             this.groupBoxMenu_SAA.TabIndex = 0;
             this.groupBoxMenu_SAA.TabStop = false;
             this.groupBoxMenu_SAA.Text = "Инструментальная панель";
@@ -204,7 +219,7 @@ namespace Project.V1
             this.panelSearch_SAA.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panelSearch_SAA.Location = new System.Drawing.Point(0, 340);
             this.panelSearch_SAA.Name = "panelSearch_SAA";
-            this.panelSearch_SAA.Size = new System.Drawing.Size(784, 129);
+            this.panelSearch_SAA.Size = new System.Drawing.Size(923, 129);
             this.panelSearch_SAA.TabIndex = 6;
             // 
             // groupBoxStat_SAA
@@ -212,6 +227,7 @@ namespace Project.V1
             this.groupBoxStat_SAA.AccessibleDescription = "";
             this.groupBoxStat_SAA.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxStat_SAA.Controls.Add(this.buttonFunk_SAA);
             this.groupBoxStat_SAA.Controls.Add(this.labelSred_SAA);
             this.groupBoxStat_SAA.Controls.Add(this.textBoxSred_SAA);
             this.groupBoxStat_SAA.Controls.Add(this.labelMin_SAA);
@@ -224,10 +240,76 @@ namespace Project.V1
             this.groupBoxStat_SAA.Controls.Add(this.textBoxZarabotok_SAA);
             this.groupBoxStat_SAA.Location = new System.Drawing.Point(361, 7);
             this.groupBoxStat_SAA.Name = "groupBoxStat_SAA";
-            this.groupBoxStat_SAA.Size = new System.Drawing.Size(408, 111);
+            this.groupBoxStat_SAA.Size = new System.Drawing.Size(547, 111);
             this.groupBoxStat_SAA.TabIndex = 1;
             this.groupBoxStat_SAA.TabStop = false;
             this.groupBoxStat_SAA.Text = "Статистика";
+            // 
+            // buttonFunk_SAA
+            // 
+            this.buttonFunk_SAA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.buttonFunk_SAA.Enabled = false;
+            this.buttonFunk_SAA.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonFunk_SAA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonFunk_SAA.Location = new System.Drawing.Point(391, 19);
+            this.buttonFunk_SAA.Name = "buttonFunk_SAA";
+            this.buttonFunk_SAA.Size = new System.Drawing.Size(139, 77);
+            this.buttonFunk_SAA.TabIndex = 5;
+            this.buttonFunk_SAA.Text = "Показать графики";
+            this.toolTipHelp_SAA.SetToolTip(this.buttonFunk_SAA, "Нажмите, чтобы посмотреть графики, построенные на базе данных\r\n");
+            this.buttonFunk_SAA.UseVisualStyleBackColor = false;
+            this.buttonFunk_SAA.Click += new System.EventHandler(this.buttonFunk_SAA_Click);
+            // 
+            // labelSred_SAA
+            // 
+            this.labelSred_SAA.AutoSize = true;
+            this.labelSred_SAA.Location = new System.Drawing.Point(265, 60);
+            this.labelSred_SAA.Name = "labelSred_SAA";
+            this.labelSred_SAA.Size = new System.Drawing.Size(73, 13);
+            this.labelSred_SAA.TabIndex = 9;
+            this.labelSred_SAA.Text = "Средний чек:";
+            // 
+            // textBoxSred_SAA
+            // 
+            this.textBoxSred_SAA.Location = new System.Drawing.Point(268, 76);
+            this.textBoxSred_SAA.Name = "textBoxSred_SAA";
+            this.textBoxSred_SAA.ReadOnly = true;
+            this.textBoxSred_SAA.Size = new System.Drawing.Size(105, 20);
+            this.textBoxSred_SAA.TabIndex = 8;
+            // 
+            // labelMin_SAA
+            // 
+            this.labelMin_SAA.AutoSize = true;
+            this.labelMin_SAA.Location = new System.Drawing.Point(138, 60);
+            this.labelMin_SAA.Name = "labelMin_SAA";
+            this.labelMin_SAA.Size = new System.Drawing.Size(103, 13);
+            this.labelMin_SAA.TabIndex = 7;
+            this.labelMin_SAA.Text = "Минимальный чек:";
+            // 
+            // labelMax_SAA
+            // 
+            this.labelMax_SAA.AutoSize = true;
+            this.labelMax_SAA.Location = new System.Drawing.Point(16, 60);
+            this.labelMax_SAA.Name = "labelMax_SAA";
+            this.labelMax_SAA.Size = new System.Drawing.Size(109, 13);
+            this.labelMax_SAA.TabIndex = 6;
+            this.labelMax_SAA.Text = "Максимальный чек:";
+            // 
+            // textBoxMin_SAA
+            // 
+            this.textBoxMin_SAA.Location = new System.Drawing.Point(141, 76);
+            this.textBoxMin_SAA.Name = "textBoxMin_SAA";
+            this.textBoxMin_SAA.ReadOnly = true;
+            this.textBoxMin_SAA.Size = new System.Drawing.Size(105, 20);
+            this.textBoxMin_SAA.TabIndex = 5;
+            // 
+            // textBoxMax_SAA
+            // 
+            this.textBoxMax_SAA.Location = new System.Drawing.Point(19, 76);
+            this.textBoxMax_SAA.Name = "textBoxMax_SAA";
+            this.textBoxMax_SAA.ReadOnly = true;
+            this.textBoxMax_SAA.Size = new System.Drawing.Size(105, 20);
+            this.textBoxMax_SAA.TabIndex = 4;
             // 
             // labelYslygi_SAA
             // 
@@ -266,6 +348,7 @@ namespace Project.V1
             // groupBoxSearch_SAA
             // 
             this.groupBoxSearch_SAA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBoxSearch_SAA.Controls.Add(this.buttonExit_SAA);
             this.groupBoxSearch_SAA.Controls.Add(this.buttonSearch_SAA);
             this.groupBoxSearch_SAA.Controls.Add(this.labelSearch_SAA);
             this.groupBoxSearch_SAA.Controls.Add(this.textBoxSearch_SAA);
@@ -293,67 +376,16 @@ namespace Project.V1
             this.textBoxSearch_SAA.Size = new System.Drawing.Size(140, 20);
             this.textBoxSearch_SAA.TabIndex = 0;
             // 
-            // textBoxMax_SAA
-            // 
-            this.textBoxMax_SAA.Location = new System.Drawing.Point(19, 76);
-            this.textBoxMax_SAA.Name = "textBoxMax_SAA";
-            this.textBoxMax_SAA.ReadOnly = true;
-            this.textBoxMax_SAA.Size = new System.Drawing.Size(105, 20);
-            this.textBoxMax_SAA.TabIndex = 4;
-            // 
-            // textBoxMin_SAA
-            // 
-            this.textBoxMin_SAA.Location = new System.Drawing.Point(141, 76);
-            this.textBoxMin_SAA.Name = "textBoxMin_SAA";
-            this.textBoxMin_SAA.ReadOnly = true;
-            this.textBoxMin_SAA.Size = new System.Drawing.Size(105, 20);
-            this.textBoxMin_SAA.TabIndex = 5;
-            // 
-            // labelMax_SAA
-            // 
-            this.labelMax_SAA.AutoSize = true;
-            this.labelMax_SAA.Location = new System.Drawing.Point(16, 60);
-            this.labelMax_SAA.Name = "labelMax_SAA";
-            this.labelMax_SAA.Size = new System.Drawing.Size(109, 13);
-            this.labelMax_SAA.TabIndex = 6;
-            this.labelMax_SAA.Text = "Максимальный чек:";
-            // 
-            // labelMin_SAA
-            // 
-            this.labelMin_SAA.AutoSize = true;
-            this.labelMin_SAA.Location = new System.Drawing.Point(138, 60);
-            this.labelMin_SAA.Name = "labelMin_SAA";
-            this.labelMin_SAA.Size = new System.Drawing.Size(103, 13);
-            this.labelMin_SAA.TabIndex = 7;
-            this.labelMin_SAA.Text = "Минимальный чек:";
-            // 
-            // textBoxSred_SAA
-            // 
-            this.textBoxSred_SAA.Location = new System.Drawing.Point(268, 76);
-            this.textBoxSred_SAA.Name = "textBoxSred_SAA";
-            this.textBoxSred_SAA.ReadOnly = true;
-            this.textBoxSred_SAA.Size = new System.Drawing.Size(105, 20);
-            this.textBoxSred_SAA.TabIndex = 8;
-            // 
-            // labelSred_SAA
-            // 
-            this.labelSred_SAA.AutoSize = true;
-            this.labelSred_SAA.Location = new System.Drawing.Point(265, 60);
-            this.labelSred_SAA.Name = "labelSred_SAA";
-            this.labelSred_SAA.Size = new System.Drawing.Size(73, 13);
-            this.labelSred_SAA.TabIndex = 9;
-            this.labelSred_SAA.Text = "Средний чек:";
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Beige;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(923, 561);
             this.Controls.Add(this.panelSearch_SAA);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelBD_SAA);
-            this.MinimumSize = new System.Drawing.Size(800, 600);
+            this.MinimumSize = new System.Drawing.Size(939, 600);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Проект | Спринт 7 | Вариант 1 | Шелудков А.А.";
@@ -398,6 +430,8 @@ namespace Project.V1
         private System.Windows.Forms.TextBox textBoxMin_SAA;
         private System.Windows.Forms.Label labelSred_SAA;
         private System.Windows.Forms.TextBox textBoxSred_SAA;
+        private System.Windows.Forms.Button buttonExit_SAA;
+        private System.Windows.Forms.Button buttonFunk_SAA;
     }
 }
 

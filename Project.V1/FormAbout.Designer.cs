@@ -90,7 +90,7 @@ namespace Project.V1
             this.groupBoxAboutProg_SAA.Controls.Add(this.labelAboutProg_SAA);
             this.groupBoxAboutProg_SAA.Location = new System.Drawing.Point(5, 253);
             this.groupBoxAboutProg_SAA.Name = "groupBoxAboutProg_SAA";
-            this.groupBoxAboutProg_SAA.Size = new System.Drawing.Size(472, 140);
+            this.groupBoxAboutProg_SAA.Size = new System.Drawing.Size(472, 145);
             this.groupBoxAboutProg_SAA.TabIndex = 2;
             this.groupBoxAboutProg_SAA.TabStop = false;
             this.groupBoxAboutProg_SAA.Text = "О программе";
@@ -98,13 +98,13 @@ namespace Project.V1
             // labelAboutProg_SAA
             // 
             this.labelAboutProg_SAA.AutoSize = true;
-            this.labelAboutProg_SAA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelAboutProg_SAA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelAboutProg_SAA.Location = new System.Drawing.Point(11, 12);
             this.labelAboutProg_SAA.Name = "labelAboutProg_SAA";
-            this.labelAboutProg_SAA.Size = new System.Drawing.Size(433, 64);
+            this.labelAboutProg_SAA.Size = new System.Drawing.Size(380, 96);
             this.labelAboutProg_SAA.TabIndex = 0;
             this.labelAboutProg_SAA.Text = "Предметная область : Автомастерская\r\n\r\nВ программе реализовано: открытие файла, \r" +
-    "\nредактирование и сохранение, поиск, вывод статистики.\r\n";
+    "\nредактирование и сохранение, поиск, вывод статистики,\r\nпоказ графиков.\r\n\r\n";
             // 
             // FormAbout
             // 

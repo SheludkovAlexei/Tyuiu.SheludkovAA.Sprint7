@@ -29,12 +29,12 @@ namespace Project.V1
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chartCost_SAA = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBoxCost_SAA = new System.Windows.Forms.GroupBox();
             this.chartMec_SAA = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -47,19 +47,19 @@ namespace Project.V1
             // chartCost_SAA
             // 
             this.chartCost_SAA.BorderlineColor = System.Drawing.Color.Ivory;
-            chartArea3.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            chartArea3.Name = "ChartArea1";
-            this.chartCost_SAA.ChartAreas.Add(chartArea3);
-            legend3.Enabled = false;
-            legend3.Name = "Legend1";
-            this.chartCost_SAA.Legends.Add(legend3);
+            chartArea1.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            chartArea1.Name = "ChartArea1";
+            this.chartCost_SAA.ChartAreas.Add(chartArea1);
+            legend1.Enabled = false;
+            legend1.Name = "Legend1";
+            this.chartCost_SAA.Legends.Add(legend1);
             this.chartCost_SAA.Location = new System.Drawing.Point(7, 19);
             this.chartCost_SAA.Name = "chartCost_SAA";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            series3.Name = "Series1";
-            this.chartCost_SAA.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            series1.Name = "Series1";
+            this.chartCost_SAA.Series.Add(series1);
             this.chartCost_SAA.Size = new System.Drawing.Size(744, 273);
             this.chartCost_SAA.TabIndex = 0;
             this.chartCost_SAA.Text = "chart1";
@@ -77,17 +77,17 @@ namespace Project.V1
             // 
             // chartMec_SAA
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chartMec_SAA.ChartAreas.Add(chartArea4);
-            legend4.Enabled = false;
-            legend4.Name = "Legend1";
-            this.chartMec_SAA.Legends.Add(legend4);
+            chartArea2.Name = "ChartArea1";
+            this.chartMec_SAA.ChartAreas.Add(chartArea2);
+            legend2.Enabled = false;
+            legend2.Name = "Legend1";
+            this.chartMec_SAA.Legends.Add(legend2);
             this.chartMec_SAA.Location = new System.Drawing.Point(7, 312);
             this.chartMec_SAA.Name = "chartMec_SAA";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartMec_SAA.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartMec_SAA.Series.Add(series2);
             this.chartMec_SAA.Size = new System.Drawing.Size(743, 295);
             this.chartMec_SAA.TabIndex = 1;
             this.chartMec_SAA.Text = "chart1";
@@ -110,10 +110,11 @@ namespace Project.V1
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
-            this.ClientSize = new System.Drawing.Size(771, 681);
+            this.ClientSize = new System.Drawing.Size(771, 677);
             this.Controls.Add(this.buttonCloseGraph_SAA);
             this.Controls.Add(this.groupBoxCost_SAA);
-            this.MinimumSize = new System.Drawing.Size(787, 678);
+            this.MaximumSize = new System.Drawing.Size(787, 716);
+            this.MinimumSize = new System.Drawing.Size(787, 716);
             this.Name = "FormGraphix";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Графики";

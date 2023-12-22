@@ -27,6 +27,7 @@ namespace Project.V1
             
         private void FormGraphix_Load(object sender, EventArgs e)
         {
+            string[] mecc = new string[8] { "", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье" };
             this.chartCost_SAA.ChartAreas[0].AxisX.Title = "Номер заказа";
             this.chartCost_SAA.ChartAreas[0].AxisY.Title = "Цена услуги";
             this.chartCost_SAA.Titles.Add("График прибыли");
@@ -50,7 +51,7 @@ namespace Project.V1
                 int[] mec = ds.mount(path1, date);
                 for (int i = 1; i < mec.Length; i++)
                 {
-                    chartMec_SAA.Series[0].Points.AddXY(i, mec[i]);
+                    chartMec_SAA.Series[0].Points.AddXY(mecc[i], mec[i]);
                 }
             }
             catch

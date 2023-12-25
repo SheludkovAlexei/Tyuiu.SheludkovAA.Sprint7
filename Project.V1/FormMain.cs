@@ -92,10 +92,10 @@ namespace Project.V1
             path = openFileDialog_SAA.FileName;
             string[,] res = Array(path);
             textBoxZarabotok_SAA.Text = Convert.ToString(ds.Pribil(path,cost));
-            textBoxYslyg_SAA.Text = Convert.ToString(ds.ID(path));
+            textBoxYslyg_SAA.Text = Convert.ToString(rows-1);
             textBoxMax_SAA.Text = Convert.ToString(ds.Max(path,cost));
             textBoxMin_SAA.Text = Convert.ToString(ds.Min(path,cost));
-            textBoxSred_SAA.Text = Convert.ToString(ds.Pribil(path,cost) / ds.ID(path));
+            textBoxSred_SAA.Text = Convert.ToString(ds.Pribil(path,cost) / (rows-1));
             dataGridViewTabl_SAA.Columns.Clear();
             dataGridViewTabl_SAA.Rows.Clear();
             dataGridViewTabl_SAA.ColumnCount = coll;
